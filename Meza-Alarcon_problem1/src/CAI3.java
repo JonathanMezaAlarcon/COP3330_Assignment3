@@ -47,14 +47,11 @@ public class CAI3
 	{
 		int correctAns = getrandomNum() * getrandomNum2();
 		
-		if (getStudentResponse() != correctAns)
-		{
-			displayIncorrectResponse();
-		}
-		
 		if (getStudentResponse() == correctAns)
 		{
 			displayCorrectResponse();
+		}else{
+			displayIncorrectResponse();
 		}
 	}
 	
@@ -62,9 +59,8 @@ public class CAI3
 	{
 		setCorrectAnsCount(10);
 		SecureRandom randomCorrect = new SecureRandom();
-		setRandomNumCorr(randomCorrect.nextInt(4) +1);
 		
-		switch(getRandomNumCorr())
+		switch(randomCorrect.nextInt(4) +1)
 		{
 			case 1 : System.out.println("Very good!\n"); break;
 			case 2 : System.out.println("Excellent!\n"); break;
@@ -76,9 +72,8 @@ public class CAI3
 	public void displayIncorrectResponse() 
 	{
 		SecureRandom randomIncorrect = new SecureRandom();
-		setRandomNumIncorr(randomIncorrect.nextInt(4) +1);
 		
-		switch(getRandomNumIncorr())
+		switch(randomIncorrect.nextInt(4) +1)
 		{
 			case 1 : System.out.println("No. Wrong Answer.\n"); break;
 			case 2 : System.out.println("Wrong. Better luck on the next question.\n"); break;
@@ -155,26 +150,6 @@ public class CAI3
 	private void setrandomNum2(int randomNum2) 
 	{
 		this.randomNum2 = randomNum2;
-	}
-	
-	private int getRandomNumIncorr() 
-	{
-		return randomNumIncorr;
-	}
-
-	private void setRandomNumIncorr(int randomNumIncorr) 
-	{
-		this.randomNumIncorr = randomNumIncorr;
-	}
-
-	private int getRandomNumCorr() 
-	{
-		return randomNumCorr;
-	}
-
-	private void setRandomNumCorr(int randomNumCorr) 
-	{
-		this.randomNumCorr = randomNumCorr;
 	}
 
 	private int getCorrectAnsCount() 
